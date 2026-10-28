@@ -7,14 +7,16 @@
     "tema": "De estudiante de Ingeniería a profesional de tecnología",
     "foto": "caro-gayosso.jpg"
   },
+  
   {
     "id": 2,
-    "nombre": "Emmanuel Olvera",
-    "cargo": "General Manager",
-    "empresa": "Hireline",
-    "tema": "Mercado Laboral de TI 2026",
-    "foto": "emmanuel-olvera.jpg"
+    "nombre": "Emyr Vázquez",
+    "cargo": "Director de arquitectura Cloud & IA",
+    "empresa": "Banco del Bajío",
+    "tema": "IA y talento del futuro: las habilidades que abrirán puertas",
+    "foto": "emyr-vazquez.jpg"
   },
+  
   {
     "id": 3,
     "nombre": "Nidya Lope",
@@ -22,5 +24,15 @@
     "empresa": "ADMX Deloitte",
     "tema": "Oportunidades laborales en ADMX Deloitte",
     "foto": "nidya-lope.jpg"
+  },
+
+  {
+    "id": 4,
+    "nombre": "Emmanuel Olvera",
+    "cargo": "General Manager",
+    "empresa": "Hireline",
+    "tema": "Mercado Laboral de TI 2026",
+    "foto": "emmanuel-olvera.jpg"
   }
+
 ]
