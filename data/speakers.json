@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Caro Gayosso",
+    "cargo": "Job Hunter",
+    "empresa": "EBAC",
+    "tema": "De estudiante de Ingeniería a profesional de tecnología",
+    "foto": "caro-gayosso.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Emmanuel Olvera",
+    "cargo": "General Manager",
+    "empresa": "Hireline",
+    "tema": "Mercado Laboral de TI 2026",
+    "foto": "emmanuel-olvera.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Nidya Lope",
+    "cargo": "Lead Talent Acquisition",
+    "empresa": "ADMX Deloitte",
+    "tema": "Oportunidades laborales en ADMX Deloitte",
+    "foto": "nidya-lope.jpg"
+  }
+]

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Talent Summit 2026 | Cumbre de Talento Tecnológico</title>
+    <link rel="icon" href="assets/logos/logo-evento.png">
+    <meta name="description" content="Tech Talent Summit 2026, Universidad Politécnica de Chiapas. Ponentes y líderes de la industria para estudiantes de IT2ID.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-brand-bgLight text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-cyan selection:text-white">
+
+    <!-- Aviso si los JSON no cargan -->
+    <div id="error-banner" class="hidden bg-red-50 border-b border-red-200 text-red-700 text-xs font-medium px-4 py-3 text-center" role="alert">
+        No se pudieron cargar los datos. Abre el proyecto con Live Server (clic derecho en index.html → Open with Live Server).
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="sticky top-0 z-40 w-full glass-light border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#inicio" class="flex items-center gap-3">
+                <img src="assets/logos/logo-evento.png" alt="Logo Tech Talent Summit 2026" class="h-16 w-auto">
+            </a>
+            <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600" aria-label="Navegación principal">
+                <a href="#inicio" class="hover:text-brand-blue transition-colors">Inicio</a>
+                <a href="#speakers-carousel" class="hover:text-brand-blue transition-colors">Speakers</a>
+                <a href="#comite" class="hover:text-brand-blue transition-colors">Comité</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== 1. HERO (datos desde data/evento.json) ===== -->
+        <section id="inicio" class="py-16 md:py-24 relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-brand-bgLight">
+            <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-sky-200/40 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute top-20 right-10 w-[300px] h-[300px] bg-orange-100/40 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="flex flex-wrap items-center justify-center gap-3 mb-6">
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-brand-orangeLight border border-brand-orange/30 text-brand-orange shadow-sm">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                        UpChiapas
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-sky-100 border border-brand-cyan/30 text-brand-blue shadow-sm">
+                        <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+                        Estudiantes en IT2ID
+                    </span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight mb-4 leading-none">
+                    TECH TALENT <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-brand-cyan to-brand-orange">SUMMIT 2026</span>
+                </h1>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto font-medium mb-8 leading-relaxed">
+                    Cumbre de Talento Tecnológico. Conecta con líderes de la industria, asiste a conferencias clave y postula a tu residencia o estancia profesional.
+                </p>
+
+                <!-- ===== CARRUSEL DE SPEAKERS (data/speakers.json) ===== -->
+                <!-- Estilos del carrusel: css/styles.css (clases .spk-*) · lógica: js/app.js -->
+                <div id="speakers-carousel" class="spk" role="region" aria-roledescription="carrusel" aria-label="Speakers del evento">
+                    <div class="spk-viewport">
+                        <div id="carousel-track" class="spk-track" aria-live="off"></div>
+                    </div>
+                    <div class="spk-controls">
+                        <div id="carousel-tabs" class="spk-tabs"></div>
+                        <div class="spk-arrows">
+                            <button type="button" id="carousel-prev" class="spk-arrow" aria-label="Speaker anterior">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+                            </button>
+                            <button type="button" id="carousel-next" class="spk-arrow" aria-label="Speaker siguiente">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-soft-xl flex items-center gap-4 text-left border-l-4 border-l-brand-blue">
+                        <div class="p-3 rounded-xl bg-sky-50 text-brand-blue border border-sky-100"><i data-lucide="calendar" class="w-6 h-6"></i></div>
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Fecha y hora</span>
+                            <h2 id="ev-fecha" class="text-sm font-bold text-slate-900">Cargando…</h2>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-soft-xl flex items-center gap-4 text-left border-l-4 border-l-brand-orange">
+                        <div class="p-3 rounded-xl bg-orange-50 text-brand-orange border border-orange-100"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Lugar / Sede</span>
+                            <h2 id="ev-sede" class="text-sm font-bold text-slate-900">Cargando…</h2>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-soft-xl flex items-center gap-4 text-left border-l-4 border-l-brand-cyan">
+                        <div class="p-3 rounded-xl bg-cyan-50 text-brand-cyan border border-cyan-100"><i data-lucide="users" class="w-6 h-6"></i></div>
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Dirigido a</span>
+                            <h2 id="ev-dirigido" class="text-sm font-bold text-slate-900">Cargando…</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 2. COMITÉ (data/comite.json) ===== -->
+        <section id="comite" class="py-16 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-xs font-extrabold text-brand-orange uppercase tracking-widest block mb-1">Organización</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Comité Organizador</h2>
+                <p class="text-sm text-slate-500 mb-10 max-w-xl mx-auto">Equipo responsable de la planeación y ejecución del evento.</p>
+                <div id="comite-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-slate-900 text-slate-400 text-[10px] border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
+            <!-- Logos a la izquierda -->
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
+                <img src="assets/logos/logo-it2id.png" alt="Instituto de Tecnologías de la Información y Digitalización" class="h-20 w-20 object-contain">
+                <img src="assets/logos/logo-upchiapas.png" alt="Universidad Politécnica de Chiapas" class="h-14 md:h-16 w-auto">
+                <span class="bg-white rounded-lg px-3 py-1.5 inline-flex">
+                    <img src="assets/logos/logo-hireline.png" alt="Hireline" class="h-9 w-auto">
+                </span>
+            </div>
+            <!-- Evento y dirección a la derecha -->
+            <div class="flex items-start gap-1.5 max-w-xs">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 mt-0.5 shrink-0 text-slate-300"></i>
+                <div>
+                    <p class="font-bold text-white mb-0.5">Tech Talent Summit 2026</p>
+                    <p id="ev-direccion" class="text-slate-300 leading-relaxed"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

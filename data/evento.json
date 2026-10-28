@@ -1,0 +1,16 @@
+{
+  "nombre": "Tech Talent Summit 2026",
+  "edicion": "1.ª edición",
+  "fecha_texto": "29 de octubre de 2026",
+  "hora": "10:00 h",
+  "sede": "Universidad Politécnica de Chiapas",
+  "auditorio": "",
+  "dirigido_a": "Estudiantes de IT2ID",
+  "cuatrimestre_min": 1,
+  "cuatrimestre_max": 9,
+  "direccion": [
+    "Universidad Politécnica de Chiapas",
+    "Carretera Tuxtla Gutiérrez - Portillo Zaragoza Km 21+500,",
+    "Colonia Las Brisas, C.P. 29150, Suchiapa, Chiapas"
+  ]
+}
